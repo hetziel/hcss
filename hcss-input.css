@@ -1,0 +1,66 @@
+:root {
+    --spacing: 0.5em 1em;
+}
+
+.input {
+    display: inline-flex;
+    align-items: center;
+    padding: var(--spacing);
+    border-radius: 10px;
+    border: var(--border);
+    background: var(--input-color);
+    transition: all ease-out 0.5s;
+}
+
+.input * {
+    margin-right: 5px;
+}
+
+.input *:last-child {
+    margin-right: 0;
+}
+
+.input:focus-within {
+    background: white;
+    border: 1px solid transparent;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+.input-xl {
+    display: flex;
+}
+
+.input .icon {
+    transition: all ease-out 0.5s;
+    background: rgba(222, 222, 222, 0.5);
+    height: 30px;
+    width: 30px;
+    min-width: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: default;
+}
+
+.input .icon:hover {
+    background: rgba(160, 160, 160, 0.5);
+}
+
+.input:focus-within .icon {
+    background: transparent;
+}
+
+.input:focus-within .icon:hover {
+    background: rgba(160, 160, 160, 0.5);
+}
+
+.input-text input {
+    height: var(--height);
+    outline: none;
+    border: none;
+    background: transparent;
+    font-size: 14px;
+    color: rgb(149, 149, 149);
+    width: 100%;
+}

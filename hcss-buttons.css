@@ -1,0 +1,268 @@
+.h-btn {
+    display: inline-block;
+    position: relative;
+    background: transparent;
+    border-radius: 4px;
+    transition: box-shadow 0.1s;
+}
+
+.h-btn:focus-within {
+    box-shadow: 0 0 0 0.25rem rgba(var(--primary-x), 0.5);
+}
+
+.h-btn button,
+.h-btn-push button,
+.h-btn-gate button {
+    background: transparent;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    padding: 6px;
+}
+
+.h-btn:hover button {
+    backdrop-filter: brightness(0.9) saturate(1) contrast(200%);
+}
+
+.h-btn:active button {
+    backdrop-filter: brightness(0.8) saturate(1) contrast(200%);
+    transition: box-shadow 0.1s;
+}
+
+
+/* Colors */
+
+.h-btn-primary button,
+.h-btn-secondary button,
+.h-btn-success button,
+.h-btn-danger button {
+    color: white;
+}
+
+.h-btn-primary {
+    background: var(--primary);
+}
+
+.h-btn-primary:focus-within {
+    box-shadow: 0 0 0 0.25rem rgba(var(--primary-x), 0.5)
+}
+
+.h-btn-secondary {
+    background: var(--secondary);
+}
+
+.h-btn-secondary:focus-within {
+    box-shadow: 0 0 0 0.25rem rgba(var(--secondary-x), 0.5)
+}
+
+.h-btn-success {
+    background: var(--success);
+}
+
+.h-btn-success:focus-within {
+    box-shadow: 0 0 0 0.25rem rgba(var(--success-x), 0.5)
+}
+
+.h-btn-danger {
+    background: var(--danger);
+}
+
+.h-btn-danger:focus-within {
+    box-shadow: 0 0 0 0.25rem rgba(var(--danger-x), 0.5)
+}
+
+.h-btn-warning {
+    background: var(--warning);
+}
+
+.h-btn-warning:focus-within {
+    box-shadow: 0 0 0 0.25rem rgba(var(--warning-x), 0.5)
+}
+
+
+/* Push button */
+
+.h-btn-push {
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 3px rgba(0, 0, 0, 0.3);
+}
+
+.h-btn-push button {
+    box-shadow: 0 -4px rgba(0, 0, 0, 0.2) inset;
+}
+
+.h-btn-push:hover {
+    box-shadow: 0 3px rgba(0, 0, 0, 0.3);
+}
+
+.h-btn-push:focus-within {
+    box-shadow: 0 3px rgba(0, 0, 0, 0.3);
+}
+
+.h-btn-push:active {
+    box-shadow: 0 1px rgba(0, 0, 0, 0.6);
+    transform: translateY(2px);
+}
+
+.h-btn-push:active button {
+    backdrop-filter: brightness(0.8) saturate(1) contrast(200%);
+    box-shadow: 0 -2px rgba(0, 0, 0, 0.2) inset;
+}
+
+
+/* Final */
+
+.h-btn:active {
+    box-shadow: none;
+}
+
+
+/* Upload */
+
+.h-btn-gate {
+    font-weight: 700;
+    box-shadow: 0 0 0 2px var(--secondary) inset;
+    overflow: hidden;
+    color: white;
+    pointer-events: auto;
+}
+
+.h-btn-gate:focus-within {
+    box-shadow: 0 0 0 2px var(--secondary) inset !important;
+}
+
+.h-btn-gate::before,
+.h-btn-gate::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.h-btn-gate::before {
+    content: '';
+    background: white;
+    transition: transform 0.3s cubic-bezier(0.7, 0, 0.2, 1);
+}
+
+.h-btn-gate:hover::before {
+    transform: translate3d(0, -100%, 0);
+}
+
+.h-btn-gate * {
+    position: relative;
+    color: black;
+    z-index: 1;
+}
+
+.h-btn-gate:hover * {
+    color: var(--secondary);
+}
+
+.h-btn-gate button {
+    transition: backdrop-filter 0.5s;
+}
+
+
+/* VARIACIÓN DE COLORES GATE */
+
+.h-btn-gate-primary *,
+.h-btn-gate-secondary *,
+.h-btn-gate-success *,
+.h-btn-gate-danger * {
+    color: white;
+}
+
+
+/**/
+
+.h-btn-gate-primary {
+    box-shadow: 0 0 0 2px var(--primary) inset;
+}
+
+.h-btn-gate-primary::before {
+    background: var(--primary);
+}
+
+.h-btn-gate-primary:hover * {
+    color: var(--primary);
+}
+
+.h-btn-gate-primary:focus-within {
+    box-shadow: 0 0 0 2px var(--primary) inset !important;
+}
+
+
+/**/
+
+.h-btn-gate-secondary::before {
+    background: var(--secondary);
+}
+
+
+/**/
+
+.h-btn-gate-success {
+    box-shadow: 0 0 0 2px var(--success) inset;
+}
+
+.h-btn-gate-success::before {
+    background: var(--success);
+}
+
+.h-btn-gate-success:hover * {
+    color: var(--success);
+}
+
+.h-btn-gate-success:focus-within {
+    box-shadow: 0 0 0 2px var(--success) inset !important;
+}
+
+
+/**/
+
+.h-btn-gate-danger {
+    box-shadow: 0 0 0 2px var(--danger) inset;
+}
+
+.h-btn-gate-danger::before {
+    background: var(--danger);
+}
+
+.h-btn-gate-danger:hover * {
+    color: var(--danger);
+}
+
+.h-btn-gate-danger:focus-within {
+    box-shadow: 0 0 0 2px var(--danger) inset !important;
+}
+
+
+/**/
+
+.h-btn-gate-warning {
+    box-shadow: 0 0 0 2px var(--warning) inset;
+}
+
+.h-btn-gate-warning::before {
+    background: var(--warning);
+}
+
+.h-btn-gate-warning:hover * {
+    color: var(--warning);
+}
+
+.h-btn-gate-warning:focus-within {
+    box-shadow: 0 0 0 2px var(--warning) inset !important;
+}
+
+
+/**/

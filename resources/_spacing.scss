@@ -1,0 +1,28 @@
+.mb-1 {
+    margin-bottom: 0.5em;
+}
+
+.mx-1 {
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+}
+
+.mxb-1 {
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+.p-1 {
+    padding: 0.5em;
+}
+
+body {
+    background-image: url(img/background.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+}

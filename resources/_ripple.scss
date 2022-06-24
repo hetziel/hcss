@@ -1,0 +1,229 @@
+// button {
+//     outline: 0px;
+// }
+// .btn {
+//     border: none;
+//     /*Quita los bordes asperos que tienen los botones por defecto*/
+//     background-color: #2196F3;
+//     margin: .5rem;
+//     position: relative;
+//     transform: rotateZ(360deg);
+//     transition: all .2s ease;
+//     overflow: hidden;
+//     cursor: pointer;
+// }
+// .btn-circle {
+//     border-radius: 50%;
+//     /*Redondear bordes*/
+//     width: 50px;
+//     /*Ancho del botón*/
+//     height: 50px;
+//     /*Alto del botón*/
+//     font-size: 26px;
+//     box-shadow: 0 3px 5px rgba(0, 0, 0, .4);
+// }
+// .btn-circle:hover,
+// .btn-circle:active {
+//     box-shadow: 0 4px 7px rgba(0, 0, 0, .4);
+// }
+// .btn-rectangle {
+//     border-radius: 2px;
+//     /*Leve redondeo*/
+//     padding: .5rem 1.5rem;
+//     /*Espaciado interno*/
+// }
+// .btn-circle,
+// .btn-raised {
+//     color: #FFF;
+// }
+// .btn-raised {
+//     box-shadow: 0 1px 5px rgba(0, 0, 0, .4);
+//     /*Sombra leve*/
+// }
+// .btn-raised:hover,
+// .btn-raised:active {
+//     box-shadow: 0 4px 6px rgba(0, 0, 0, .4);
+// }
+// .btn-flat {
+//     font-weight: 700;
+//     /*Negrilla*/
+//     color: #2196F3;
+//     background-color: transparent;
+// }
+// .block {
+//     position: relative;
+//     width: 270px;
+//     height: 178px;
+//     margin: 20px auto;
+// }
+// .ripple-container {
+//     /*Con los siguientes valores de position, top, left, width y height aseguramos que el div tome todo el tamaño de su padre*/
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+//     height: 100%;
+//     overflow: hidden;
+//     background: transparent;
+// }
+// // .ripple-effect {
+// //     position: absolute;
+// //     /*En javascript colocaremos el top y left de este span en el punto donde hizo click el usuario. Por eso es necesario trasladarlo en -50% en ambos ejes, para que el centro del efecto coincida con el click*/
+// //     -webkit-transform: translate(-50%, -50%);
+// //     transform: translate(-50%, -50%);
+// //     opacity: 0;
+// //     width: 0;
+// //     height: 0;
+// //     border-radius: 50%;
+// //     background: rgba(255, 255, 255, 0.4);
+// // }
+// .ripple-container::before {
+//     content: '';
+//     position: absolute;
+//     /*En javascript colocaremos el top y left de este span en el punto donde hizo click el usuario. Por eso es necesario trasladarlo en -50% en ambos ejes, para que el centro del efecto coincida con el click*/
+//     -webkit-transform: translate(-50%, -50%);
+//     transform: translate(-50%, -50%);
+//     opacity: 0;
+//     width: 0;
+//     height: 0;
+//     border-radius: 50%;
+//     background: rgba(255, 255, 255, 0.4);
+// }
+// .btn-flat .ripple-effect {
+//     background: rgba(33, 150, 243, 0.4);
+// }
+// .ripple-container.ripple-effect-animation .ripple-effect {
+//     /*Aplicamos la animación que mas adelante definiremos con @keyframes*/
+//     -webkit-animation: ripple .4s ease-in;
+//     animation: ripple .4s ease-in;
+// }
+// @-webkit-keyframes ripple {
+//     0% {
+//         opacity: 0;
+//     }
+//     30% {
+//         opacity: 1;
+//     }
+//     100% {
+//         opacity: 0;
+//         padding-bottom: 200%;
+//         width: 200%;
+//     }
+// }
+.h-ripple {
+    position: relative;
+    margin: 15px;
+    color: #fff;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border: none;
+    outline: none;
+    background: #1d85c2;
+    transition: .2s;
+    overflow: hidden;
+}
+
+.h-ripple:hover {
+    background: #1a97df;
+}
+
+.h-ripple span {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, .25);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: ripple .7s linear;
+}
+
+@keyframes ripple {
+    0% {
+        width: 0;
+        height: 0;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        width: 200px;
+        height: 200px;
+    }
+}
+
+// new ripple 
+.h-loading-ripple span {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    margin: 0 5px;
+    position: relative;
+}
+
+.h-loading-ripple span::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: inherit;
+    border-radius: 50%;
+    z-index: -1;
+    animation: loading_ripple 1.5s ease-out infinite;
+}
+
+.h-loading-ripple span:first-child {
+    background-color: #ff414d;
+}
+
+.h-loading-ripple span:first-child::before {
+    animation-delay: 0.2s;
+}
+
+.h-loading-ripple span:nth-child(2) {
+    background-color: #ff7a00;
+    transform: scale(0.9);
+}
+
+.h-loading-ripple span:nth-child(2)::before {
+    animation-delay: 0.4s;
+}
+
+.h-loading-ripple span:nth-child(3) {
+    background-color: #28df99;
+    transform: scale(0.8);
+}
+
+.h-loading-ripple span:nth-child(3)::before {
+    animation-delay: 0.6s;
+}
+
+.h-loading-ripple span:nth-child(4) {
+    background-color: #81b214;
+    transform: scale(0.7);
+}
+
+.h-loading-ripple span:nth-child(4)::before {
+    animation-delay: 0.8s;
+}
+
+.h-loading-ripple span:last-child {
+    background-color: #f09ae9;
+    transform: scale(0.6);
+}
+
+.h-loading-ripple span:last-child::before {
+    animation-delay: 1s;
+}
+
+@keyframes loading_ripple {
+    from {
+        opacity: 1;
+        transform: scale(0);
+    }
+    to {
+        opacity: 0;
+        transform: scale(3);
+    }
+}

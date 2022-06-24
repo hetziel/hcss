@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HCSS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="hcss-grid.css">
+    <link rel="stylesheet" href="hcss-input.css">
+    <link rel="stylesheet" href="hcss-buttons.css">
+    <link rel="stylesheet" href="hcss.css">
+</head>
+
+<body>
+    <div class="header">
+        <button class="btn">Hola</button>
+        <a href="buttons.html">Botones</a>
+    </div>
+
+    <div class="main">
+        <h1>inputs</h1>
+        <p>Para usar los inputs basta con la clase
+            <span class="badge">input</span> como contenedor principal.
+        </p>
+        <p>Si es tipo texto se le añade como segunda clase
+            <span class="badge">input-text</span>
+        </p>
+
+        <pre class="pre1 prettyprint"><code class="adapt">
+            &lt;div class="input input-text"&gt;
+                &lt;input type="text"&gt;
+            &lt;/div&gt;</code></pre>
+        <div class="input input-text">
+            <input type="text">
+        </div>
+
+        <h2>iconos</h2>
+
+        <p>
+            Para añadirle un icono solo debe colocar un div con la etiqueta
+            <span class="badge">icon</span> dentro del contenedor
+        </p>
+
+        <pre class="pre1 prettyprint"><code class="adapt">
+            &lt;div class="input input-text"&gt;
+            &lt;div class="icon"&gt;X&lt;/div&gt;
+                &lt;input type="text"&gt;
+            &lt;/div&gt;</code></pre>
+
+        <div class="input input-text">
+            <div class="icon">X</div>
+            <input type="text">
+        </div>
+
+        <div class="input input-text">
+            <input type="text">
+            <div class="icon">X</div>
+            <div class="icon">X</div>
+        </div>
+
+        <div class="input input-text">
+            <div class="icon">X</div>
+            <input type="text">
+            <div class="icon">X</div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+</body>
+
+</html>

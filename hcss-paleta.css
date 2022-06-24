@@ -1,0 +1,16 @@
+:root {
+    --primary: rgb(58, 134, 255);
+    --primary-x: 58, 134, 255;
+    --secondary: rgb(108, 117, 125);
+    --secondary-x: 108, 117, 125;
+    --danger: rgb(230, 57, 70);
+    --danger-x: 230, 57, 70;
+    --success: rgb(2, 195, 154);
+    --success-x: 2, 195, 154;
+    --warning: rgb(255, 190, 11);
+    --warning-x: 255, 190, 11;
+}
+
+body {
+    --primary: #3a86ff;
+}

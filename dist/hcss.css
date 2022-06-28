@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,700");
 :root {
   --primary: rgb(58, 134, 255);
   --primary-x: 58, 134, 255;
@@ -10,6 +11,22 @@
   --success-x: 2, 195, 154;
   --warning: rgb(255, 190, 11);
   --warning-x: 255, 190, 11;
+}
+
+.bg-primary {
+  background-color: var(--primary);
+}
+
+.bg-secondary {
+  background-color: var(--secondary);
+}
+
+.bg-danger {
+  background-color: var(--danger);
+}
+
+.bg-white {
+  background-color: white;
 }
 
 .row {
@@ -454,66 +471,183 @@ q:lang(tag) {
 }
 
 /**/
-.h-ripple-container {
-  background: #FFFFFF;
-  transition: 0.25s ease-in-out;
+.h-ripple {
   position: relative;
+  transition: 0.2s;
+  overflow: hidden;
 }
 
-.controller {
-  text-align: center;
-  color: rgba(0, 0, 0, 0.9);
-  min-width: 100px;
-  padding: 10px 15px 8px 15px;
+.h-ripple span {
   position: absolute;
-  font-size: 22px;
-  border: solid 3px rgba(0, 0, 0, 0.9);
-  text-transform: uppercase;
-  top: 50%;
-  left: 50%;
-  margin: -22px 0 0 -68px;
-  cursor: pointer;
-  transition: 0.25s ease-in-out;
-  z-index: 500;
-}
-
-/*Ripple*/
-.ripple {
-  width: 10px;
-  height: 10px;
-  opacity: 0;
-  transform: scale(0);
-  background: rgba(0, 0, 0, 0.5);
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.25);
   border-radius: 50%;
-  position: fixed;
+  pointer-events: none;
+  animation: ripple 0.7s linear;
 }
 
-/*Bright Ripple*/
-.h-ripple-container.dark {
-  background: rgba(0, 0, 0, 0.9);
+.h-ripple.bg-white span {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: ripple 0.7s linear;
 }
 
-.h-ripple-container.dark .ripple {
-  background: rgba(255, 255, 255, 0.5);
-}
-
-.h-ripple-container.dark .controller {
-  color: rgba(255, 255, 255, 0.9);
-  border-color: rgba(255, 255, 255, 0.9);
-}
-
-/*Animate Function*/
-.animate {
-  animation: ripple-mo 1s cubic-bezier(0, 0, 0.2, 1);
-}
-
-@keyframes ripple-mo {
+@keyframes ripple {
   0% {
-    transform: scale(0);
+    width: 0;
+    height: 0;
+  }
+  80% {
     opacity: 1;
   }
   100% {
-    transform: scale(10);
     opacity: 0;
+    width: 200px;
+    height: 200px;
   }
+}
+.h-btn-ripple {
+  position: relative;
+  transition: 0.2s;
+  overflow: hidden;
+  background-color: red;
+  border: none;
+  padding: 6px;
+}
+
+.h-btn-ripple span {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: ripple 0.7s linear;
+}
+
+.h-btn-ripple.bg-white span {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: ripple 0.7s linear;
+}
+
+@keyframes ripple {
+  0% {
+    width: 0;
+    height: 0;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    width: 200px;
+    height: 200px;
+  }
+}
+[anim=ripple] {
+  position: relative;
+  overflow: hidden;
+}
+[anim=ripple]:before {
+  content: "";
+  position: absolute;
+  display: block;
+  background: var(--ripple-background, white);
+  border-radius: 50%;
+  pointer-events: none;
+  top: calc(var(--y) * 1px);
+  left: calc(var(--x) * 1px);
+  width: calc(var(--d) * 1px);
+  height: calc(var(--d) * 1px);
+  opacity: calc(var(--o, 1) * var(--ripple-opacity, 0.3));
+  transition: calc(var(--t, 0) * var(--ripple-duration, 600ms)) var(--ripple-easing, linear);
+  transform: translate(-50%, -50%) scale(var(--s, 1));
+  transform-origin: center;
+}
+
+button {
+  --ripple-background: white;
+  --ripple-opacity: 0.3;
+  --ripple-duration: 600ms;
+  border: 1px solid #e02200;
+  border-radius: 0;
+  padding: 0.75em 3em;
+  font-size: 1em;
+  outline: none;
+  display: block;
+  background: tomato;
+  color: white;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  min-width: 200px;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+a {
+  --ripple-background: black;
+  --ripple-opacity: 0.1;
+  --ripple-duration: 600ms;
+  display: block;
+  margin-top: 1em;
+  padding: 0.75em 3em;
+  background: whitesmoke;
+  color: black;
+  text-decoration: none;
+  border: 1px solid gainsboro;
+  min-width: 200px;
+  text-align: center;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  transition: background-color 300ms;
+}
+a:hover {
+  background-color: #ededed;
+}
+
+.rainbow {
+  --ripple-opacity: 1;
+  --ripple-background: radial-gradient(circle at center, rebeccapurple, dodgerblue, olive, gold, orange, tomato);
+  --ripple-duration: 2000ms;
+  --ripple-easing: cubic-bezier(0, .5, .5, 1);
+  background-color: skyblue;
+  color: rgba(255, 255, 255, 0.7);
+  transition: background-color 300ms, color 300ms;
+}
+.rainbow:hover {
+  background-color: #5bbce4;
+  color: white;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: Roboto, sans-serif;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-size: 1.2em;
 }

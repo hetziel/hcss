@@ -1,0 +1,29 @@
+q:lang(div) {
+    quotes: "<div " ">";
+    color: red;
+}
+
+q:lang(enddiv) {
+    quotes: "</div>""";
+    color: red;
+}
+
+q:lang(tag) {
+    quotes: "<" "/>";
+    color: green;
+}
+
+.pre1 {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 12px 0 10px;
+    font-size: 0, 9em;
+}
+
+.pre1 {
+    overflow: auto;
+}
+
+.adapt {
+    white-space: pre-wrap;
+}

@@ -11,6 +11,18 @@
     --warning-x: 255, 190, 11;
 }
 
-body {
-    --primary: #3a86ff;
+.bg-primary {
+    background-color: var(--primary);
+}
+
+.bg-secondary {
+    background-color: var(--secondary);
+}
+
+.bg-danger {
+    background-color: var(--danger);
+}
+
+.bg-white {
+    background-color: white;
 }
